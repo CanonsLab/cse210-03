@@ -1,5 +1,7 @@
 from game.scripting.action import Action
-
+import constants
+from game.casting.actor import Actor
+from game.shared.point import Point
 
 # TODO: Implement MoveActorsAction class here! 
 
@@ -22,6 +24,8 @@ class MoveActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
+        
         actors = cast.get_all_actors()
+        snake = cast.get_first_actor("snakes")
         for actor in actors:
             actor.move_next()
