@@ -1,4 +1,4 @@
-from Cycle.game.casting.player1 import Player1
+from game.casting.player1 import Player1
 from game.scripting.action import Action
 
 
