@@ -2,7 +2,7 @@ from game.scripting.action import Action
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
-from game.casting.snake import Snake
+from game.casting.player1 import Player1
 
 # TODO: Implement MoveActorsAction class here! 
 
@@ -27,7 +27,10 @@ class MoveActorsAction(Action):
         """
         
         actors = cast.get_all_actors()
-        snake = cast.get_first_actor("snakes")
+        snake = cast.get_first_actor("player1")
+        player2 = cast.get_first_actor("player2")
         snake.grow_tail(1)
+        player2.grow_tail(1)
         for actor in actors:
             actor.move_next()
+        
