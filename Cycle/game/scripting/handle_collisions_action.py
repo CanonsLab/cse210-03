@@ -1,3 +1,4 @@
+from Cycle.game.casting.player1 import Player1
 import constants
 from game.casting.actor import Actor
 from game.scripting.action import Action
@@ -37,7 +38,7 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         score = cast.get_first_actor("scores")
-        snake = cast.get_first_actor("player1")
+        Player1 = cast.get_first_actor("player1")
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -45,11 +46,11 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake = cast.get_first_actor("player1")
+        Player1 = cast.get_first_actor("player1")
         player2 = cast.get_first_actor("player2")
-        head = snake.get_segments()[0]
+        head = Player1.get_segments()[0]
         head2 = player2.get_segments()[0]
-        segments = snake.get_segments()[1:]
+        segments = Player1.get_segments()[1:]
         segments2 = player2.get_segments()[1:]
         
         for segment in segments:
@@ -70,9 +71,9 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         if self._is_game_over:
-            snake = cast.get_first_actor("player1")
+            Player1 = cast.get_first_actor("player1")
             player2 = cast.get_first_actor("player2")
-            segments = snake.get_segments()
+            segments = Player1.get_segments()
             segments2 = player2.get_segments()
 
             x = int(constants.MAX_X / 2)

@@ -27,9 +27,9 @@ class MoveActorsAction(Action):
         """
         
         actors = cast.get_all_actors()
-        snake = cast.get_first_actor("player1")
+        Player1 = cast.get_first_actor("player1")
         player2 = cast.get_first_actor("player2")
-        snake.grow_tail(1)
+        Player1.grow_tail(1)
         player2.grow_tail(1)
         for actor in actors:
             actor.move_next()

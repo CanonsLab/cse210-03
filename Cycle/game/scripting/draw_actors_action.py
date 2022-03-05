@@ -1,3 +1,4 @@
+from Cycle.game.casting.player1 import Player1
 from game.scripting.action import Action
 
 
@@ -27,9 +28,9 @@ class DrawActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         score = cast.get_first_actor("scores")
-        snake = cast.get_first_actor("player1")
+        Player1 = cast.get_first_actor("player1")
         player2 = cast.get_first_actor("player2")
-        segments = snake.get_segments()
+        segments = Player1.get_segments()
         segments2 = player2.get_segments()
         messages = cast.get_actors("messages")
 
