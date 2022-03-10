@@ -72,9 +72,9 @@ class HandleCollisionsAction(Action):
         """
         if self._is_game_over:
             Player1 = cast.get_first_actor("player1")
-            player2 = cast.get_first_actor("player2")
+            Player2 = cast.get_first_actor("player2")
             segments = Player1.get_segments()
-            segments2 = player2.get_segments()
+            segments2 = Player2.get_segments()
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -85,6 +85,8 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
+            Player1.set_color(constants.WHITE)
+            Player2.set_color(constants.WHITE)
             for segment in segments:
                 segment.set_color(constants.WHITE)
             for segment2 in segments2:

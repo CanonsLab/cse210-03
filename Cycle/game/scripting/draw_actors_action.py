@@ -29,9 +29,9 @@ class DrawActorsAction(Action):
         """
         score = cast.get_first_actor("scores")
         Player1 = cast.get_first_actor("player1")
-        player2 = cast.get_first_actor("player2")
+        Player2 = cast.get_first_actor("player2")
         segments = Player1.get_segments()
-        segments2 = player2.get_segments()
+        segments2 = Player2.get_segments()
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()

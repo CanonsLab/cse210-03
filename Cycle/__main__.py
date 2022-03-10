@@ -19,8 +19,17 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("player1", Player1())
-    cast.add_actor("player2", Player1())
+    P1 = Player1()
+    P2 = Player1()
+    P1.set_color(constants.GREEN)
+    P1.set_position(Point(300, 300))
+    P2.set_color(constants.RED)
+    P2.set_position(Point(600, 300))
+    cast.add_actor("player1", P1)
+    cast.add_actor("player2", P2)
+    P1 = cast.get_first_actor("player1")
+    P2 = cast.get_first_actor("player2")
+
     cast.add_actor("scores", Score())
    
     # start the game
